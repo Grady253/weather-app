@@ -15,6 +15,11 @@ function Weather(){
         if(name == 'city'){
             setform({...form, city:value})
         }
+
+        if(name == 'country'){
+            setform({...form, country:value})
+        }
+        console.log(form.city, form.country);
     }
     return(
         <div className="weather">
@@ -22,8 +27,8 @@ function Weather(){
             <br/>
 
             <form>
-                <input type='text' name='city' placeholder='city'/>
-                <input type='text' name='country' placeholder='country'/>
+                <input type='text' name='city' placeholder='city' onChange={e => handleChange(e)}/>
+                <input type='text' name='country' placeholder='country' onChange={e => handleChange(e)}/>
                 <button className="getweather">Submit</button>
             </form>
         </div>
