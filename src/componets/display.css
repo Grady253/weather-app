@@ -1,0 +1,23 @@
+.displayWeather{
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.displayWeather .maincard{
+    width:500px;
+    margin-top: 20px;
+    align-self: center;
+    padding: 50px;
+    border-radius: 20px;
+    position: relative;
+    background:green ;
+    border: 2px solid black;
+}
+
+.cardtitle{
+    position: absolute;
+    top:10px;
+    left: 10px;
+    font-size: 20px;
+}
