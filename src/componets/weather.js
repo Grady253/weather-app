@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./weather.css";
-import Display from "./Display";
+import DisplayWeather from "./DisplayWeather";
 
 function Weather() {
   const weatherApi = "7ed2cdd385302b1dd5833c452252aa10";
@@ -10,7 +10,7 @@ function Weather() {
     country: "",
   });
 
-  const [weather, setweather] = useState([]);
+  const [weather, setWeather] = useState([]);
 
   async function weatherData(e) {
     e.prevent.default();
@@ -23,8 +23,8 @@ function Weather() {
         .then((res) => res.json())
         .then((data) => console.log(data));
 
-      setweather({
-        data: data,
+      setWeather({
+        data: data
       });
     }
   }
@@ -40,7 +40,6 @@ function Weather() {
     if (name == "country") {
       setform({ ...form, country: value });
     }
-    console.log(form.city, form.country);
   };
 
   return (
@@ -68,7 +67,7 @@ function Weather() {
 
       {weather.data != undefined ? (
         <div>
-          <Display data={weather.data} />
+          <DisplayWeather data={weather.data} />
         </div>
       ) : null}
     </div>
